@@ -16,7 +16,7 @@ public class Structure implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String libelle;
+	private String label;
 	
 	@OneToMany(mappedBy = "structure")
 	private Collection<SDLReference> sDLReference;
@@ -33,7 +33,7 @@ public class Structure implements Serializable{
 	public Structure(String libelle, Collection<SDLReference> sDLReference,
 			Collection<DelegateReference> referencielDelegataire) {
 		super();
-		this.libelle = libelle;
+		this.label = libelle;
 		this.sDLReference = sDLReference;
 		this.referencielDelegataire = referencielDelegataire;
 	}
@@ -49,11 +49,11 @@ public class Structure implements Serializable{
 	}
 
 	public String getLibelle() {
-		return libelle;
+		return label;
 	}
 
 	public void setLibelle(String libelle) {
-		this.libelle = libelle;
+		this.label= libelle;
 	}
 
 
