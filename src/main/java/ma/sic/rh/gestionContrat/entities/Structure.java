@@ -19,10 +19,10 @@ public class Structure implements Serializable{
 	private String libelle;
 	
 	@OneToMany(mappedBy = "structure")
-	private Collection<ReferencielSDL> referencielSDL;
+	private Collection<SDLReference> sDLReference;
    
    @OneToMany(mappedBy = "structure")
-	private Collection<ReferencielDelegataire> referencielDelegataire;
+	private Collection<DelegateReference> referencielDelegataire;
 	
 	public Structure() {
 		// TODO Auto-generated constructor stub
@@ -30,11 +30,11 @@ public class Structure implements Serializable{
 	
 	
 	
-	public Structure(String libelle, Collection<ReferencielSDL> referencielSDL,
-			Collection<ReferencielDelegataire> referencielDelegataire) {
+	public Structure(String libelle, Collection<SDLReference> sDLReference,
+			Collection<DelegateReference> referencielDelegataire) {
 		super();
 		this.libelle = libelle;
-		this.referencielSDL = referencielSDL;
+		this.sDLReference = sDLReference;
 		this.referencielDelegataire = referencielDelegataire;
 	}
 
@@ -58,25 +58,25 @@ public class Structure implements Serializable{
 
 
 
-	public Collection<ReferencielSDL> getReferencielSDL() {
-		return referencielSDL;
+	public Collection<SDLReference> getReferencielSDL() {
+		return sDLReference;
 	}
 
 
 
-	public void setReferencielSDL(Collection<ReferencielSDL> referencielSDL) {
-		this.referencielSDL = referencielSDL;
+	public void setReferencielSDL(Collection<SDLReference> sDLReference) {
+		this.sDLReference = sDLReference;
 	}
 
 
 
-	public Collection<ReferencielDelegataire> getReferencielDelegataire() {
+	public Collection<DelegateReference> getReferencielDelegataire() {
 		return referencielDelegataire;
 	}
 
 
 
-	public void setReferencielDelegataire(Collection<ReferencielDelegataire> referencielDelegataire) {
+	public void setReferencielDelegataire(Collection<DelegateReference> referencielDelegataire) {
 		this.referencielDelegataire = referencielDelegataire;
 	}
 	

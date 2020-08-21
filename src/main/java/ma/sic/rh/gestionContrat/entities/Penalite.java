@@ -19,10 +19,10 @@ public class Penalite implements Serializable {
     private String pj;
     private String observations;
     @ManyToOne
-    private ReferencielSDL referencielSDL;
+    private SDLReference sDLReference;
 
     @ManyToOne
-    private ReferencielDelegataire referencielDelegataire;
+    private DelegateReference delegateReference;
 	
     @ManyToOne
     private Contrat contrat;
@@ -30,37 +30,25 @@ public class Penalite implements Serializable {
     public Penalite() {
     }
 
-    public Penalite(Double montant, String motifs, String status, Date dateReglement, Double montantReglement, String numRecuReglement, String pj, String observations, ReferencielSDL referencielSDL, ReferencielDelegataire referencielDelegataire, Contrat contrat) {
-        this.montant = montant;
-        this.motifs = motifs;
-        this.status = status;
-        this.dateReglement = dateReglement;
-        this.montantReglement = montantReglement;
-        this.numRecuReglement = numRecuReglement;
-        this.pj = pj;
-        this.observations = observations;
-        this.referencielSDL = referencielSDL;
-        this.referencielDelegataire = referencielDelegataire;
-        this.contrat = contrat;
-    }
+   
 
-    @Override
-    public String toString() {
-        return "Penalite{" +
-                "id=" + id +
-                ", montant=" + montant +
-                ", motifs='" + motifs + '\'' +
-                ", status='" + status + '\'' +
-                ", dateReglement=" + dateReglement +
-                ", montantReglement=" + montantReglement +
-                ", numRecuReglement='" + numRecuReglement + '\'' +
-                ", pj='" + pj + '\'' +
-                ", observations='" + observations + '\'' +
-                ", referencielSDL=" + referencielSDL +
-                ", referencielDelegataire=" + referencielDelegataire +
-                ", contrat=" + contrat +
-                '}';
-    }
+    public Penalite(Double montant, String motifs, String status, Date dateReglement, Double montantReglement,
+			String numRecuReglement, String pj, String observations, SDLReference sDLReference,
+			DelegateReference delegateReference, Contrat contrat) {
+		super();
+		this.montant = montant;
+		this.motifs = motifs;
+		this.status = status;
+		this.dateReglement = dateReglement;
+		this.montantReglement = montantReglement;
+		this.numRecuReglement = numRecuReglement;
+		this.pj = pj;
+		this.observations = observations;
+		this.sDLReference = sDLReference;
+		this.delegateReference = delegateReference;
+		this.contrat = contrat;
+	}
+
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -138,23 +126,33 @@ public class Penalite implements Serializable {
         this.observations = observations;
     }
 
-    public ReferencielSDL getReferencielSDL() {
-        return referencielSDL;
-    }
+    
 
-    public void setReferencielSDL(ReferencielSDL referencielSDL) {
-        this.referencielSDL = referencielSDL;
-    }
+    public SDLReference getsDLReference() {
+		return sDLReference;
+	}
 
-    public ReferencielDelegataire getReferencielDelegataire() {
-        return referencielDelegataire;
-    }
 
-    public void setReferencielDelegataire(ReferencielDelegataire referencielDelegataire) {
-        this.referencielDelegataire = referencielDelegataire;
-    }
 
-    public Contrat getContrat() {
+	public void setsDLReference(SDLReference sDLReference) {
+		this.sDLReference = sDLReference;
+	}
+
+
+
+	public DelegateReference getDelegateReference() {
+		return delegateReference;
+	}
+
+
+
+	public void setDelegateReference(DelegateReference delegateReference) {
+		this.delegateReference = delegateReference;
+	}
+
+
+
+	public Contrat getContrat() {
         return contrat;
     }
 

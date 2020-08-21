@@ -19,38 +19,28 @@ public class Investissement implements Serializable {
     private String observations;
 
     @ManyToOne
-    private ReferencielDelegataire referencielDelegataire;
+    private DelegateReference delegateReference;
     @ManyToOne
-    private ReferencielSDL referencielSDL;
+    private SDLReference sDLReference;
 
     public Investissement() {
     }
 
-    public Investissement(String typeInvestissement, Double montant, String objectifs, String status, String pj, String observations, ReferencielDelegataire referencielDelegataire, ReferencielSDL referencielSDL) {
-        this.typeInvestissement = typeInvestissement;
-        this.montant = montant;
-        this.objectifs = objectifs;
-        this.status = status;
-        this.pj = pj;
-        this.observations = observations;
-        this.referencielDelegataire = referencielDelegataire;
-        this.referencielSDL = referencielSDL;
-    }
+   
 
-    @Override
-    public String toString() {
-        return "Investissement{" +
-                "id=" + id +
-                ", typeInvestissement='" + typeInvestissement + '\'' +
-                ", montant=" + montant +
-                ", objectifs='" + objectifs + '\'' +
-                ", status='" + status + '\'' +
-                ", pj='" + pj + '\'' +
-                ", observations='" + observations + '\'' +
-                ", referencielDelegataire=" + referencielDelegataire +
-                ", referencielSDL=" + referencielSDL +
-                '}';
-    }
+    public Investissement(String typeInvestissement, Double montant, String objectifs, String status, String pj,
+			String observations, DelegateReference delegateReference, SDLReference sDLReference) {
+		super();
+		this.typeInvestissement = typeInvestissement;
+		this.montant = montant;
+		this.objectifs = objectifs;
+		this.status = status;
+		this.pj = pj;
+		this.observations = observations;
+		this.delegateReference = delegateReference;
+		this.sDLReference = sDLReference;
+	}
+
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -112,19 +102,29 @@ public class Investissement implements Serializable {
         this.observations = observations;
     }
 
-    public ReferencielDelegataire getReferencielDelegataire() {
-        return referencielDelegataire;
-    }
 
-    public void setReferencielDelegataire(ReferencielDelegataire referencielDelegataire) {
-        this.referencielDelegataire = referencielDelegataire;
-    }
 
-    public ReferencielSDL getReferencielSDL() {
-        return referencielSDL;
-    }
+	public DelegateReference getDelegateReference() {
+		return delegateReference;
+	}
 
-    public void setReferencielSDL(ReferencielSDL referencielSDL) {
-        this.referencielSDL = referencielSDL;
-    }
+
+
+	public void setDelegateReference(DelegateReference delegateReference) {
+		this.delegateReference = delegateReference;
+	}
+
+
+
+	public SDLReference getsDLReference() {
+		return sDLReference;
+	}
+
+
+
+	public void setsDLReference(SDLReference sDLReference) {
+		this.sDLReference = sDLReference;
+	}
+
+   
 }

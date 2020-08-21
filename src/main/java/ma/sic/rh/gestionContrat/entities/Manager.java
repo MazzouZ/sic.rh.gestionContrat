@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class Gerant implements Serializable{
+public class Manager implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,28 +25,32 @@ public class Gerant implements Serializable{
 	  
 	   private String mail;
 	   
-	   @OneToMany(mappedBy = "gerant")
-		private Collection<ReferencielSDL> referencielSDL;
+	   @OneToMany(mappedBy = "manager")
+		private Collection<SDLReference> sDLReference;
 	   
-	   @OneToMany(mappedBy = "gerant")
-		private Collection<ReferencielDelegataire> referencielDelegataire;
+	   @OneToMany(mappedBy = "manager")
+		private Collection<DelegateReference> delegateReference;
 	
-	public Gerant() {
+	public Manager() {
 		// TODO Auto-generated constructor stub
 	}
 
-	
 
-	public Gerant(String nom, String prenom, String tel, String mail, Collection<ReferencielSDL> referencielSDL,
-			Collection<ReferencielDelegataire> referencielDelegataire) {
+
+	public Manager(String nom, String prenom, String tel, String mail, Collection<SDLReference> sDLReference,
+			Collection<DelegateReference> delegateReference) {
 		super();
 		Nom = nom;
 		Prenom = prenom;
 		Tel = tel;
 		this.mail = mail;
-		this.referencielSDL = referencielSDL;
-		this.referencielDelegataire = referencielDelegataire;
+		this.sDLReference = sDLReference;
+		this.delegateReference = delegateReference;
 	}
+
+
+
+
 
 
 
@@ -93,30 +97,27 @@ public class Gerant implements Serializable{
 
 
 
-	public Collection<ReferencielSDL> getReferencielSDL() {
-		return referencielSDL;
+	public Collection<SDLReference> getsDLReference() {
+		return sDLReference;
 	}
 
 
 
-	public void setReferencielSDL(Collection<ReferencielSDL> referencielSDL) {
-		this.referencielSDL = referencielSDL;
+	public void setsDLReference(Collection<SDLReference> sDLReference) {
+		this.sDLReference = sDLReference;
 	}
 
 
 
-	public Collection<ReferencielDelegataire> getReferencielDelegataire() {
-		return referencielDelegataire;
+	public Collection<DelegateReference> getDelegateReference() {
+		return delegateReference;
 	}
 
 
 
-	public void setReferencielDelegataire(Collection<ReferencielDelegataire> referencielDelegataire) {
-		this.referencielDelegataire = referencielDelegataire;
+	public void setDelegateReference(Collection<DelegateReference> delegateReference) {
+		this.delegateReference = delegateReference;
 	}
-	
-	
-	
 	
 
 }

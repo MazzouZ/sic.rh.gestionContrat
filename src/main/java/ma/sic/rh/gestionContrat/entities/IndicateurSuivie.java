@@ -19,38 +19,29 @@ public class IndicateurSuivie implements Serializable {
     private Date dateValeur;
 
     @ManyToOne
-    private ReferencielDelegataire referencielDelegataire;
+    private DelegateReference delegateReference;
     @ManyToOne
-    private ReferencielSDL referencielSDL;
+    private SDLReference sDLReference;
 
     public IndicateurSuivie() {
     }
 
-    public IndicateurSuivie(String typeIndicateur, String nom, String description, String valeurContractuelle, String valeurConstate, Date dateValeur, ReferencielDelegataire referencielDelegataire, ReferencielSDL referencielSDL) {
-        this.typeIndicateur = typeIndicateur;
-        this.nom = nom;
-        this.description = description;
-        this.valeurContractuelle = valeurContractuelle;
-        this.valeurConstate = valeurConstate;
-        this.dateValeur = dateValeur;
-        this.referencielDelegataire = referencielDelegataire;
-        this.referencielSDL = referencielSDL;
-    }
+    public IndicateurSuivie(String typeIndicateur, String nom, String description, String valeurContractuelle,
+			String valeurConstate, Date dateValeur, DelegateReference delegateReference, SDLReference sDLReference) {
+		super();
+		this.typeIndicateur = typeIndicateur;
+		this.nom = nom;
+		this.description = description;
+		this.valeurContractuelle = valeurContractuelle;
+		this.valeurConstate = valeurConstate;
+		this.dateValeur = dateValeur;
+		this.delegateReference = delegateReference;
+		this.sDLReference = sDLReference;
+	}
 
-    @Override
-    public String toString() {
-        return "IndicateurSuivie{" +
-                "id=" + id +
-                ", typeIndicateur='" + typeIndicateur + '\'' +
-                ", nom='" + nom + '\'' +
-                ", description='" + description + '\'' +
-                ", valeurContractuelle='" + valeurContractuelle + '\'' +
-                ", valeurConstate='" + valeurConstate + '\'' +
-                ", dateValeur=" + dateValeur +
-                ", referencielDelegataire=" + referencielDelegataire +
-                ", referencielSDL=" + referencielSDL +
-                '}';
-    }
+
+
+
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -112,19 +103,21 @@ public class IndicateurSuivie implements Serializable {
         this.dateValeur = dateValeur;
     }
 
-    public ReferencielDelegataire getReferencielDelegataire() {
-        return referencielDelegataire;
-    }
+	public DelegateReference getDelegateReference() {
+		return delegateReference;
+	}
 
-    public void setReferencielDelegataire(ReferencielDelegataire referencielDelegataire) {
-        this.referencielDelegataire = referencielDelegataire;
-    }
+	public void setDelegateReference(DelegateReference delegateReference) {
+		this.delegateReference = delegateReference;
+	}
 
-    public ReferencielSDL getReferencielSDL() {
-        return referencielSDL;
-    }
+	public SDLReference getsDLReference() {
+		return sDLReference;
+	}
 
-    public void setReferencielSDL(ReferencielSDL referencielSDL) {
-        this.referencielSDL = referencielSDL;
-    }
+	public void setsDLReference(SDLReference sDLReference) {
+		this.sDLReference = sDLReference;
+	}
+
+    
 }
