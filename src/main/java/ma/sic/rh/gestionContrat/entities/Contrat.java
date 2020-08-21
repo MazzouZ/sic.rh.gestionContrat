@@ -26,10 +26,10 @@ public class Contrat implements Serializable {
     private Collection<Penalite> penalites;
 
     @ManyToOne
-    private ReferencielSDL referencielSDL;
+    private SDLReference sDLReference;
 
     @ManyToOne
-    private ReferencielDelegataire referencielDelegataire;
+    private DelegateReference delegateReference;
 
     @ManyToOne
     private Document marcheSigne;
@@ -40,45 +40,29 @@ public class Contrat implements Serializable {
     public Contrat() {
     }
 
-    public Contrat(String numContrat, String intituleContrat, String objetContrat, Date dateMiseVigueur, Date dateFin, String secteur, String montantContrat, String numMarche, String pi, String observations, Collection<Penalite> penalites, ReferencielSDL referencielSDL, ReferencielDelegataire referencielDelegataire, Document marcheSigne, Document contratSigne) {
-        this.numContrat = numContrat;
-        this.intituleContrat = intituleContrat;
-        this.objetContrat = objetContrat;
-        this.dateMiseVigueur = dateMiseVigueur;
-        this.dateFin = dateFin;
-        this.secteur = secteur;
-        this.montantContrat = montantContrat;
-        this.numMarche = numMarche;
-        this.pi = pi;
-        this.observations = observations;
-        this.penalites = penalites;
-        this.referencielSDL = referencielSDL;
-        this.referencielDelegataire = referencielDelegataire;
-        this.marcheSigne = marcheSigne;
-        this.contratSigne = contratSigne;
-    }
+    
 
-    @Override
-    public String toString() {
-        return "Contrat{" +
-                "id=" + id +
-                ", numContrat='" + numContrat + '\'' +
-                ", intituleContrat='" + intituleContrat + '\'' +
-                ", objetContrat='" + objetContrat + '\'' +
-                ", dateMiseVigueur=" + dateMiseVigueur +
-                ", dateFin=" + dateFin +
-                ", secteur='" + secteur + '\'' +
-                ", montantContrat='" + montantContrat + '\'' +
-                ", numMarche='" + numMarche + '\'' +
-                ", pi='" + pi + '\'' +
-                ", observations='" + observations + '\'' +
-                ", penalites=" + penalites +
-                ", referencielSDL=" + referencielSDL +
-                ", referencielDelegataire=" + referencielDelegataire +
-                ", marcheSigne=" + marcheSigne +
-                ", contratSigne=" + contratSigne +
-                '}';
-    }
+    public Contrat(String numContrat, String intituleContrat, String objetContrat, Date dateMiseVigueur, Date dateFin,
+			String secteur, String montantContrat, String numMarche, String pi, String observations,
+			Collection<Penalite> penalites, SDLReference sDLReference, DelegateReference delegateReference,
+			Document marcheSigne, Document contratSigne) {
+		super();
+		this.numContrat = numContrat;
+		this.intituleContrat = intituleContrat;
+		this.objetContrat = objetContrat;
+		this.dateMiseVigueur = dateMiseVigueur;
+		this.dateFin = dateFin;
+		this.secteur = secteur;
+		this.montantContrat = montantContrat;
+		this.numMarche = numMarche;
+		this.pi = pi;
+		this.observations = observations;
+		this.penalites = penalites;
+		this.sDLReference = sDLReference;
+		this.delegateReference = delegateReference;
+		this.marcheSigne = marcheSigne;
+		this.contratSigne = contratSigne;
+	}
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -180,23 +164,33 @@ public class Contrat implements Serializable {
         this.penalites = penalites;
     }
 
-    public ReferencielSDL getReferencielSDL() {
-        return referencielSDL;
-    }
+    
 
-    public void setReferencielSDL(ReferencielSDL referencielSDL) {
-        this.referencielSDL = referencielSDL;
-    }
+    public SDLReference getsDLReference() {
+		return sDLReference;
+	}
 
-    public ReferencielDelegataire getReferencielDelegataire() {
-        return referencielDelegataire;
-    }
 
-    public void setReferencielDelegataire(ReferencielDelegataire referencielDelegataire) {
-        this.referencielDelegataire = referencielDelegataire;
-    }
 
-    public Document getMarcheSigne() {
+	public void setsDLReference(SDLReference sDLReference) {
+		this.sDLReference = sDLReference;
+	}
+
+
+
+	public DelegateReference getDelegateReference() {
+		return delegateReference;
+	}
+
+
+
+	public void setDelegateReference(DelegateReference delegateReference) {
+		this.delegateReference = delegateReference;
+	}
+
+
+
+	public Document getMarcheSigne() {
         return marcheSigne;
     }
 
