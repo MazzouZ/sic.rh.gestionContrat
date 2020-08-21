@@ -30,10 +30,10 @@ public class Structure implements Serializable{
 	
 	
 	
-	public Structure(String libelle, Collection<SDLReference> sDLReference,
+	public Structure(String label, Collection<SDLReference> sDLReference,
 			Collection<DelegateReference> referencielDelegataire) {
 		super();
-		this.label = libelle;
+		this.label = label;
 		this.sDLReference = sDLReference;
 		this.referencielDelegataire = referencielDelegataire;
 	}
@@ -48,12 +48,12 @@ public class Structure implements Serializable{
 		return id;
 	}
 
-	public String getLibelle() {
+	public String getlabel() {
 		return label;
 	}
 
-	public void setLibelle(String libelle) {
-		this.label= libelle;
+	public void setlabel(String label) {
+		this.label= label;
 	}
 
 
