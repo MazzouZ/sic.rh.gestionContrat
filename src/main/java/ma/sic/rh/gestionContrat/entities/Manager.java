@@ -17,9 +17,9 @@ public class Manager implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	 private String Nom;
+	 private String Name;
 	  
-	   private String Prenom;
+	   private String Firstname;
 	   
 	   private String Tel;
 	  
@@ -36,17 +36,18 @@ public class Manager implements Serializable{
 	}
 
 
-
-	public Manager(String nom, String prenom, String tel, String mail, Collection<SDLReference> sDLReference,
+	public Manager(String name, String firstname, String tel, String mail, Collection<SDLReference> sDLReference,
 			Collection<DelegateReference> delegateReference) {
 		super();
-		Nom = nom;
-		Prenom = prenom;
+		Name = name;
+		Firstname = firstname;
 		Tel = tel;
 		this.mail = mail;
 		this.sDLReference = sDLReference;
 		this.delegateReference = delegateReference;
 	}
+
+
 
 
 
@@ -63,21 +64,25 @@ public class Manager implements Serializable{
 		return serialVersionUID;
 	}
 
-	public String getNom() {
-		return Nom;
+	public String getName() {
+		return Name;
 	}
 
-	public void setNom(String nom) {
-		Nom = nom;
+
+	public void setName(String name) {
+		Name = name;
 	}
 
-	public String getPrenom() {
-		return Prenom;
+
+	public String getFirstname() {
+		return Firstname;
 	}
 
-	public void setPrenom(String prenom) {
-		Prenom = prenom;
+
+	public void setFirstname(String firstname) {
+		Firstname = firstname;
 	}
+
 
 	public String getTel() {
 		return Tel;
