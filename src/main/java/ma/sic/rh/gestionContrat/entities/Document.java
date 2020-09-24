@@ -1,11 +1,14 @@
 package ma.sic.rh.gestionContrat.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Document implements Serializable{
@@ -14,102 +17,93 @@ public class Document implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	 private String typeDocument;
+	   @ManyToOne
+	   private DocumentType documentType;
 	   
-	   private String nomDocument;
+	   private String documentName;
 	  
-	   private String dateDeCreation;
+	   private Date creationDate;
 	   
 	   private String document;
 	  
 	   private String observations;
 
 	public Document() {
-		// TODO Auto-generated constructor stub
 	}
 	
-	
-	
-	public Document(String typeDocument, String nomDocument, String dateDeCreation, String document,
+
+	public Document(DocumentType documentType, String documentName, Date creationDate, String document,
 			String observations) {
 		super();
-		this.typeDocument = typeDocument;
-		this.nomDocument = nomDocument;
-		this.dateDeCreation = dateDeCreation;
+		this.documentType = documentType;
+		this.documentName = documentName;
+		this.creationDate = creationDate;
 		this.document = document;
 		this.observations = observations;
 	}
 
 
-
-	public static long getSerialVersionUID() {
-		return serialVersionUID;
+	@Override
+	public String toString() {
+		return "Document [id=" + id + ", documentType=" + documentType + ", documentName=" + documentName
+				+ ", creationDate=" + creationDate + ", document=" + document + ", observations=" + observations + "]";
 	}
-
 
 
 	public Long getId() {
 		return id;
 	}
 
-
-	public String getTypeDocument() {
-		return typeDocument;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-
-
-	public void setTypeDocument(String typeDocument) {
-		this.typeDocument = typeDocument;
+	public DocumentType getDocumentType() {
+		return documentType;
 	}
 
-
-
-	public String getNomDocument() {
-		return nomDocument;
+	public void setDocumentType(DocumentType documentType) {
+		this.documentType = documentType;
 	}
 
-
-
-	public void setNomDocument(String nomDocument) {
-		this.nomDocument = nomDocument;
+	public String getDocumentName() {
+		return documentName;
 	}
 
-
-
-	public String getDateDeCreation() {
-		return dateDeCreation;
+	public void setDocumentName(String documentName) {
+		this.documentName = documentName;
 	}
 
-
-
-	public void setDateDeCreation(String dateDeCreation) {
-		this.dateDeCreation = dateDeCreation;
+	public Date getCreationDate() {
+		return creationDate;
 	}
 
-
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
 
 	public String getDocument() {
 		return document;
 	}
 
-
-
 	public void setDocument(String document) {
 		this.document = document;
 	}
-
-
 
 	public String getObservations() {
 		return observations;
 	}
 
-
-
 	public void setObservations(String observations) {
 		this.observations = observations;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
+	
 	
 	
 

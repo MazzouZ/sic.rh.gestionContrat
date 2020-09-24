@@ -9,4 +9,5 @@ import ma.sic.rh.gestionContrat.entities.DocumentType;
 @RepositoryRestResource
 @CrossOrigin("*")
 public interface DocumentTypeRepository extends JpaRepository<DocumentType,Long>{
+	DocumentType findByLabel(String label);
 }

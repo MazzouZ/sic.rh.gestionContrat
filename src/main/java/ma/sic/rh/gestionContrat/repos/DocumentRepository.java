@@ -9,4 +9,6 @@ import ma.sic.rh.gestionContrat.entities.Document;
 @RepositoryRestResource
 @CrossOrigin("*")
 public interface DocumentRepository extends JpaRepository<Document,Long> {
+
+	Document findByDocument(String fileName);
 }
