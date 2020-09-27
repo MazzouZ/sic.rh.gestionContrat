@@ -4,18 +4,18 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 @Entity
-public class Penalite implements Serializable {
+public class Penality implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Double montant;
-    private String motifs;
+    private Double amount;
+    private String patterns;
     private String status;
-    private Date dateReglement;
-    private Double montantReglement;
-    private String numRecuReglement;
+    private Date regulationDate;
+    private Double amountRegulation;
+    private String numRecuRegulation;
     private String pj;
     private String observations;
     @ManyToOne
@@ -27,21 +27,21 @@ public class Penalite implements Serializable {
     @ManyToOne
     private Contrat contrat;
 
-    public Penalite() {
+    public Penality() {
     }
 
    
 
-    public Penalite(Double montant, String motifs, String status, Date dateReglement, Double montantReglement,
-			String numRecuReglement, String pj, String observations, SDLReference sDLReference,
+    public Penality(Double amount, String patterns, String status, Date regulationDate, Double amountRegulation,
+			String numRecuRegulation, String pj, String observations, SDLReference sDLReference,
 			DelegateReference delegateReference, Contrat contrat) {
 		super();
-		this.montant = montant;
-		this.motifs = motifs;
+		this.amount = amount;
+		this.patterns = patterns;
 		this.status = status;
-		this.dateReglement = dateReglement;
-		this.montantReglement = montantReglement;
-		this.numRecuReglement = numRecuReglement;
+		this.regulationDate = regulationDate;
+		this.amountRegulation = amountRegulation;
+		this.numRecuRegulation = numRecuRegulation;
 		this.pj = pj;
 		this.observations = observations;
 		this.sDLReference = sDLReference;
@@ -62,20 +62,20 @@ public class Penalite implements Serializable {
         this.id = id;
     }
 
-    public Double getMontant() {
-        return montant;
+    public Double getAmount() {
+        return amount;
     }
 
-    public void setMontant(Double montant) {
-        this.montant = montant;
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
 
-    public String getMotifs() {
-        return motifs;
+    public String getPatterns() {
+        return patterns;
     }
 
-    public void setMotifs(String motifs) {
-        this.motifs = motifs;
+    public void setPatterns(String patterns) {
+        this.patterns = patterns;
     }
 
     public String getStatus() {
@@ -86,28 +86,28 @@ public class Penalite implements Serializable {
         this.status = status;
     }
 
-    public Date getDateReglement() {
-        return dateReglement;
+    public Date getRegulationDate() {
+        return regulationDate;
     }
 
-    public void setDateReglement(Date dateReglement) {
-        this.dateReglement = dateReglement;
+    public void setRegulationDate(Date regulationDate) {
+        this.regulationDate = regulationDate;
     }
 
-    public Double getMontantReglement() {
-        return montantReglement;
+    public Double getAmountRegulation() {
+        return amountRegulation;
     }
 
-    public void setMontantReglement(Double montantReglement) {
-        this.montantReglement = montantReglement;
+    public void setAmountRegulation(Double amountRegulation) {
+        this.amountRegulation = amountRegulation;
     }
 
-    public String getNumRecuReglement() {
-        return numRecuReglement;
+    public String getNumRecuRegulation() {
+        return numRecuRegulation;
     }
 
-    public void setNumRecuReglement(String numRecuReglement) {
-        this.numRecuReglement = numRecuReglement;
+    public void setNumRecuRegulation(String numRecuRegulation) {
+        this.numRecuRegulation = numRecuRegulation;
     }
 
     public String getPj() {

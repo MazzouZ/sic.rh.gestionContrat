@@ -47,7 +47,7 @@ public class SDLReference implements Serializable {
     private Structure structure;
 
     @OneToMany(mappedBy = "sDLReference")
-    private Collection<Penalite> penalites;
+    private Collection<Penality> penalities;
 
     @OneToMany(mappedBy = "sDLReference")
     private Collection<Contrat> contrats;
@@ -65,7 +65,7 @@ public class SDLReference implements Serializable {
     public SDLReference(String socialReason, String publicLiability, String taxIdentification,
 			String commonCompanyIdentifier, String numCnss, String adresse, String telephone, String fax, String email,
 			Double capitale, Double capitalPerShareholder, String activitySector, Document status, Document modeleJ,
-			Manager manager, Structure structure, Collection<Penalite> penalites, Collection<Contrat> contrats,
+			Manager manager, Structure structure, Collection<Penality> penalities, Collection<Contrat> contrats,
 			Collection<Investissement> investissements, Collection<IndicateurSuivie> indicateurSuivie) {
 		super();
 		this.socialReason = socialReason;
@@ -84,7 +84,7 @@ public class SDLReference implements Serializable {
 		ModeleJ = modeleJ;
 		this.manager = manager;
 		this.structure = structure;
-		this.penalites = penalites;
+		this.penalities = penalities;
 		this.contrats = contrats;
 		this.investissements = investissements;
 		this.indicateurSuivie = indicateurSuivie;
@@ -226,12 +226,12 @@ public class SDLReference implements Serializable {
 		this.structure = structure;
 	}
 
-	public Collection<Penalite> getPenalites() {
-		return penalites;
+	public Collection<Penality> getPenalites() {
+		return penalities;
 	}
 
-	public void setPenalites(Collection<Penalite> penalites) {
-		this.penalites = penalites;
+	public void setPenalites(Collection<Penality> penalities) {
+		this.penalities = penalities;
 	}
 
 	public Collection<Contrat> getContrats() {

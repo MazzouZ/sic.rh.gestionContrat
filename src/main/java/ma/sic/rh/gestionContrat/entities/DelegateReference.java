@@ -54,7 +54,7 @@ public class DelegateReference implements Serializable {
     private ParentCompany parentCompany;
 
     @OneToMany(mappedBy = "delegateReference")
-    private Collection<Penalite> penalites;
+    private Collection<Penality> penalities;
 
     @OneToMany(mappedBy = "delegateReference")
     private Collection<Contrat> contrats;
@@ -73,7 +73,7 @@ public class DelegateReference implements Serializable {
 			String commonCompanyIdentifier, String numCnss, String adresse, String telephone, String fax, String email,
 			Double capitale, Double capitalPerShareholder, String activitySector, boolean foreignCompanySubsidiary,
 			Document status, Document modeleJ, Manager manager, Structure structure, ParentCompany parentCompany,
-			Collection<Penalite> penalites, Collection<Contrat> contrats, Collection<Investissement> investissements,
+			Collection<Penality> penalities, Collection<Contrat> contrats, Collection<Investissement> investissements,
 			Collection<IndicateurSuivie> indicateurSuivie) {
 		super();
 		this.socialReason = socialReason;
@@ -94,7 +94,7 @@ public class DelegateReference implements Serializable {
 		this.manager = manager;
 		this.structure = structure;
 		this.parentCompany = parentCompany;
-		this.penalites = penalites;
+		this.penalities = penalities;
 		this.contrats = contrats;
 		this.investissements = investissements;
 		this.indicateurSuivie = indicateurSuivie;
@@ -255,12 +255,12 @@ public class DelegateReference implements Serializable {
 		this.parentCompany = parentCompany;
 	}
 
-	public Collection<Penalite> getPenalites() {
-		return penalites;
+	public Collection<Penality> getPenalites() {
+		return penalities;
 	}
 
-	public void setPenalites(Collection<Penalite> penalites) {
-		this.penalites = penalites;
+	public void setPenalites(Collection<Penality> penalities) {
+		this.penalities = penalities;
 	}
 
 	public Collection<Contrat> getContrats() {

@@ -23,7 +23,7 @@ public class Contrat implements Serializable {
     private String observations;
 	
     @OneToMany(mappedBy = "contrat")
-    private Collection<Penalite> penalites;
+    private Collection<Penality> penalities;
 
     @ManyToOne
     private SDLReference sDLReference;
@@ -44,7 +44,7 @@ public class Contrat implements Serializable {
 
     public Contrat(String numContrat, String intituleContrat, String objetContrat, Date dateMiseVigueur, Date dateFin,
 			String secteur, String montantContrat, String numMarche, String pi, String observations,
-			Collection<Penalite> penalites, SDLReference sDLReference, DelegateReference delegateReference,
+			Collection<Penality> penalities, SDLReference sDLReference, DelegateReference delegateReference,
 			Document marcheSigne, Document contratSigne) {
 		super();
 		this.numContrat = numContrat;
@@ -57,7 +57,7 @@ public class Contrat implements Serializable {
 		this.numMarche = numMarche;
 		this.pi = pi;
 		this.observations = observations;
-		this.penalites = penalites;
+		this.penalities = penalities;
 		this.sDLReference = sDLReference;
 		this.delegateReference = delegateReference;
 		this.marcheSigne = marcheSigne;
@@ -156,12 +156,12 @@ public class Contrat implements Serializable {
         this.observations = observations;
     }
 
-    public Collection<Penalite> getPenalites() {
-        return penalites;
+    public Collection<Penality> getPenalites() {
+        return penalities;
     }
 
-    public void setPenalites(Collection<Penalite> penalites) {
-        this.penalites = penalites;
+    public void setPenalites(Collection<Penality> penalities) {
+        this.penalities = penalities;
     }
 
     
