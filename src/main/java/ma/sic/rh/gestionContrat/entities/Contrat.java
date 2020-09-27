@@ -43,7 +43,7 @@ public class Contrat implements Serializable {
 
     public Contrat(String numContrat, String titleContract, String contractObject, Date effectiveDate, Date endDate,
 			String sector, String contractAmount, String numMarket, String pi, String observations,
-			Collection<Penalite> penalites, SDLReference sDLReference, DelegateReference delegateReference,
+			Collection<Penality> penalites, SDLReference sDLReference, DelegateReference delegateReference,
 			Document signedMarket, Document signedContract) {
 		super();
 		this.numContrat = numContrat;
