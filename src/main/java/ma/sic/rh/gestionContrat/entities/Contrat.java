@@ -12,13 +12,13 @@ public class Contrat implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String numContrat;
-    private String intituleContrat;
-    private String objetContrat;
-    private Date dateMiseVigueur;
-    private Date dateFin;
-    private String secteur;
-    private String montantContrat;
-    private String numMarche;
+    private String titleContract;
+    private String contractObject;
+    private Date effectiveDate;
+    private Date endDate;
+    private String sector;
+    private String contractAmount;
+    private String numMarket;
     private String pi;
     private String observations;
 	
@@ -32,39 +32,40 @@ public class Contrat implements Serializable {
     private DelegateReference delegateReference;
 
     @ManyToOne
-    private Document marcheSigne;
+    private Document signedMarket;
 
     @ManyToOne
-    private Document contratSigne;
+    private Document signedContract;
 
     public Contrat() {
     }
 
-    
 
-    public Contrat(String numContrat, String intituleContrat, String objetContrat, Date dateMiseVigueur, Date dateFin,
-			String secteur, String montantContrat, String numMarche, String pi, String observations,
-			Collection<Penality> penalities, SDLReference sDLReference, DelegateReference delegateReference,
-			Document marcheSigne, Document contratSigne) {
+    public Contrat(String numContrat, String titleContract, String contractObject, Date effectiveDate, Date endDate,
+			String sector, String contractAmount, String numMarket, String pi, String observations,
+			Collection<Penalite> penalites, SDLReference sDLReference, DelegateReference delegateReference,
+			Document signedMarket, Document signedContract) {
 		super();
 		this.numContrat = numContrat;
-		this.intituleContrat = intituleContrat;
-		this.objetContrat = objetContrat;
-		this.dateMiseVigueur = dateMiseVigueur;
-		this.dateFin = dateFin;
-		this.secteur = secteur;
-		this.montantContrat = montantContrat;
-		this.numMarche = numMarche;
+		this.titleContract = titleContract;
+		this.contractObject = contractObject;
+		this.effectiveDate = effectiveDate;
+		this.endDate = endDate;
+		this.sector = sector;
+		this.contractAmount = contractAmount;
+		this.numMarket = numMarket;
 		this.pi = pi;
 		this.observations = observations;
 		this.penalities = penalities;
 		this.sDLReference = sDLReference;
 		this.delegateReference = delegateReference;
-		this.marcheSigne = marcheSigne;
-		this.contratSigne = contratSigne;
+		this.signedMarket = signedMarket;
+		this.signedContract = signedContract;
 	}
 
-    public static long getSerialVersionUID() {
+
+
+	public static long getSerialVersionUID() {
         return serialVersionUID;
     }
 
@@ -84,63 +85,97 @@ public class Contrat implements Serializable {
         this.numContrat = numContrat;
     }
 
-    public String getIntituleContrat() {
-        return intituleContrat;
-    }
+    public String getTitleContract() {
+		return titleContract;
+	}
 
-    public void setIntituleContrat(String intituleContrat) {
-        this.intituleContrat = intituleContrat;
-    }
 
-    public String getObjetContrat() {
-        return objetContrat;
-    }
+	public void setTitleContract(String titleContract) {
+		this.titleContract = titleContract;
+	}
 
-    public void setObjetContrat(String objetContrat) {
-        this.objetContrat = objetContrat;
-    }
 
-    public Date getDateMiseVigueur() {
-        return dateMiseVigueur;
-    }
+	public String getContractObject() {
+		return contractObject;
+	}
 
-    public void setDateMiseVigueur(Date dateMiseVigueur) {
-        this.dateMiseVigueur = dateMiseVigueur;
-    }
 
-    public Date getDateFin() {
-        return dateFin;
-    }
+	public void setContractObject(String contractObject) {
+		this.contractObject = contractObject;
+	}
 
-    public void setDateFin(Date dateFin) {
-        this.dateFin = dateFin;
-    }
 
-    public String getSecteur() {
-        return secteur;
-    }
+	public Date getEffectiveDate() {
+		return effectiveDate;
+	}
 
-    public void setSecteur(String secteur) {
-        this.secteur = secteur;
-    }
 
-    public String getMontantContrat() {
-        return montantContrat;
-    }
+	public void setEffectiveDate(Date effectiveDate) {
+		this.effectiveDate = effectiveDate;
+	}
 
-    public void setMontantContrat(String montantContrat) {
-        this.montantContrat = montantContrat;
-    }
 
-    public String getNumMarche() {
-        return numMarche;
-    }
+	public Date getEndDate() {
+		return endDate;
+	}
 
-    public void setNumMarche(String numMarche) {
-        this.numMarche = numMarche;
-    }
 
-    public String getPi() {
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+
+	public String getSector() {
+		return sector;
+	}
+
+
+	public void setSector(String sector) {
+		this.sector = sector;
+	}
+
+
+	public String getContractAmount() {
+		return contractAmount;
+	}
+
+
+	public void setContractAmount(String contractAmount) {
+		this.contractAmount = contractAmount;
+	}
+
+
+	public String getNumMarket() {
+		return numMarket;
+	}
+
+
+	public void setNumMarket(String numMarket) {
+		this.numMarket = numMarket;
+	}
+
+
+	public Document getSignedMarket() {
+		return signedMarket;
+	}
+
+
+	public void setSignedMarket(Document signedMarket) {
+		this.signedMarket = signedMarket;
+	}
+
+
+	public Document getSignedContract() {
+		return signedContract;
+	}
+
+
+	public void setSignedContract(Document signedContract) {
+		this.signedContract = signedContract;
+	}
+
+
+	public String getPi() {
         return pi;
     }
 
@@ -189,20 +224,4 @@ public class Contrat implements Serializable {
 	}
 
 
-
-	public Document getMarcheSigne() {
-        return marcheSigne;
-    }
-
-    public void setMarcheSigne(Document marcheSigne) {
-        this.marcheSigne = marcheSigne;
-    }
-
-    public Document getContratSigne() {
-        return contratSigne;
-    }
-
-    public void setContratSigne(Document contratSigne) {
-        this.contratSigne = contratSigne;
-    }
 }
