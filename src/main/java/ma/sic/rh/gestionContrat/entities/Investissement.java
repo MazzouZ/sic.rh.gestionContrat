@@ -10,8 +10,6 @@ public class Investissement implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String typeInvestissement;
     private Double montant;
     private String objectifs;
     private String status;
@@ -22,16 +20,15 @@ public class Investissement implements Serializable {
     private DelegateReference delegateReference;
     @ManyToOne
     private SDLReference sDLReference;
+    @ManyToOne
+	private InvestmentType investmentType;
 
     public Investissement() {
     }
-
-   
-
-    public Investissement(String typeInvestissement, Double montant, String objectifs, String status, String pj,
-			String observations, DelegateReference delegateReference, SDLReference sDLReference) {
+    
+    public Investissement(Double montant, String objectifs, String status, String pj, String observations,
+			DelegateReference delegateReference, SDLReference sDLReference, InvestmentType investmentType) {
 		super();
-		this.typeInvestissement = typeInvestissement;
 		this.montant = montant;
 		this.objectifs = objectifs;
 		this.status = status;
@@ -39,10 +36,11 @@ public class Investissement implements Serializable {
 		this.observations = observations;
 		this.delegateReference = delegateReference;
 		this.sDLReference = sDLReference;
+		this.investmentType = investmentType;
 	}
 
 
-    public static long getSerialVersionUID() {
+	public static long getSerialVersionUID() {
         return serialVersionUID;
     }
 
@@ -54,15 +52,15 @@ public class Investissement implements Serializable {
         this.id = id;
     }
 
-    public String getTypeInvestissement() {
-        return typeInvestissement;
-    }
+    public InvestmentType getInvestmentType() {
+		return investmentType;
+	}
 
-    public void setTypeInvestissement(String typeInvestissement) {
-        this.typeInvestissement = typeInvestissement;
-    }
+	public void setInvestmentType(InvestmentType investmentType) {
+		this.investmentType = investmentType;
+	}
 
-    public Double getMontant() {
+	public Double getMontant() {
         return montant;
     }
 
